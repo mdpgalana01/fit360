@@ -1,11 +1,10 @@
-/*
-03/03/2026
+<!-- 03/03/2026
 Este archivo:
     - comprueba que hay sesión
     - muestra un saludo
 
-Según el rol, muestra secciones distintas (de momento solo texto, luego ya lo adaptaré al wireframe)
-*/
+Según el rol, muestra secciones distintas (de momento solo texto, luego ya lo adaptaré al wireframe) -->
+
 
 <?php
 session_start();

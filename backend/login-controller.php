@@ -17,7 +17,7 @@ require_once "conexion.php";
 
 // 1. Comprobar que vienen datos por POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../frontend/login.html");
+    header("Location: ../frontend/login.php");
     exit();
 }
 
@@ -26,8 +26,7 @@ $contrasena = trim($_POST["contrasena"] ?? "");
 
 // 2. Validaciones básicas
 if ($email === "" || $contrasena === "") {
-    // Más adelante esto lo mostraremos bonito en el front
-    header("Location: ../frontend/login.html?error=campos_vacios");
+    header("Location: ../frontend/login.php?error=campos_vacios");
     exit();
 }
 
@@ -41,8 +40,7 @@ $stmt->execute();
 $resultado = $stmt->get_result();
 
 if ($resultado->num_rows === 0) {
-    // No existe el usuario
-    header("Location: ../frontend/login.html?error=usuario_no_encontrado");
+    header("Location: ../frontend/login.php?error=usuario_no_encontrado");
     exit();
 }
 
@@ -50,8 +48,7 @@ $usuario = $resultado->fetch_assoc();
 
 // 4. Verificar contraseña
 if (!password_verify($contrasena, $usuario["contrasena"])) {
-    // Contraseña incorrecta
-    header("Location: ../frontend/login.html?error=contrasena_incorrecta");
+    header("Location: ../frontend/login.php?error=contrasena_incorrecta");
     exit();
 }
 
@@ -62,7 +59,7 @@ $_SESSION["email"]       = $usuario["email"];
 $_SESSION["rol"]         = $usuario["rol"];
 $_SESSION["id_gimnasio"] = $usuario["id_gimnasio"];
 
-// 6. Redirigir al dashboard único
-header("Location: dashboard.php");
+// 6. Redirigir al dashboard del frontend
+header("Location: ../frontend/dashboard.php");
 exit();
 ?>

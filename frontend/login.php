@@ -23,7 +23,7 @@ if (isset($_GET["error"])) {
 <head>
     <meta charset="UTF-8">
     <title>Login | Fit360</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
@@ -41,7 +41,7 @@ if (isset($_GET["error"])) {
                 <p class="error"><?php echo $errorMsg; ?></p>
             <?php endif; ?>
 
-            <form action="../backend/login.php" method="POST" class="login-form">
+            <form action="../backend/login-controller.php" method="POST" class="login-form">
 
                 <label>Email</label>
                 <input type="email" name="email" required>
