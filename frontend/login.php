@@ -52,8 +52,8 @@ if (isset($_GET["error"])) {
                 <button type="submit" class="btn-login">Entrar</button>
 
                 <div class="links">
-                    <a href="#">¿Has olvidado tu contraseña?</a>
-                    <a href="#">Crear cuenta</a>
+                    <a href="recuperar.php">¿Has olvidado tu contraseña?</a>
+                    <a href="registro.php">Crear cuenta</a>
                 </div>
             </form>
         </div>
