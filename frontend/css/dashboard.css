@@ -44,9 +44,10 @@
 }
 
 .sidebar nav a img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
+  display: block;
   filter: drop-shadow(
     0 0 2px rgba(0, 0, 0, 0.4)
   ); /* para separarlo del naranja */
@@ -263,6 +264,144 @@
   transform: translateY(-3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
   border-color: #ffd4d4; /* un toque del naranja corporativo */
+}
+
+/* --- MI PERFIL --- */
+
+.profile-section {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.profile-card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.profile-form .form-group {
+  margin-bottom: 18px;
+}
+
+.profile-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.profile-form input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.profile-form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 15px;
+}
+
+.btn-save {
+  margin: 20px auto 0 auto; /* centrado horizontal */
+  padding: 12px 28px;
+  background: #ff4444; /* naranja corporativo */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  display: block; /* esto es CLAVE para centrarlo */
+  width: fit-content; /* evita que se estire */
+}
+
+.btn-save:hover {
+  background: #e63c3c;
+}
+
+/* Fila de dos columnas para campos cortos */
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .half {
+  flex: 1;
+}
+
+/* --- AVATAR CENTRADO PREMIUM --- */
+
+.profile-header-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.avatar-container-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.avatar-preview-centered {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ff4444;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  margin-bottom: 8px;
+}
+
+.avatar-upload-centered {
+  display: inline-block;
+  background: #ff4444;
+  color: #fff;
+  padding: 7px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.avatar-upload-centered input {
+  display: none;
+}
+
+.avatar-upload-centered:hover {
+  background: #e63c3c;
+}
+
+.profile-title-centered {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive: en móviles se apila */
+@media (max-width: 600px) {
+  .profile-header {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 /******** Diseño responsive ********/

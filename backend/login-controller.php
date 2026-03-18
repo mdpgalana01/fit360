@@ -1,17 +1,14 @@
-/*
-03/03/2026
-Este archivo:
-    - recibe email y contrasena por POST
-    - busca el usuario en la tabla
-    - verifica la contraseña con password_verify()
-    - inicia sesión
-    - redirige a dashboard.php si todo va bien
-    - si falla, devuelve al login con un mensaje
-
-Más adelante, cuando tengamos el login.html, el formulario apuntará a ../backend/login.php por POST.    
-*/
-
 <?php
+// 03/03/2026
+// Este archivo:
+//    - recibe email y contrasena por POST
+//    - busca el usuario en la tabla
+//    - verifica la contraseña con password_verify()
+//    - inicia sesión
+//    - redirige a dashboard.php si todo va bien
+//    - si falla, devuelve al login con un mensaje
+
+// Más adelante, cuando tengamos el login.html, el formulario apuntará a ../backend/login.php por POST.    
 session_start();
 require_once "conexion.php";
 

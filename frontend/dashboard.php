@@ -7,7 +7,25 @@ if (!isset($_SESSION["id_usuario"])) {
     exit();
 }
 
-$nombre = $_SESSION["nombre"];
+// $nombre = $_SESSION["nombre"];
+
+require_once "../backend/conexion.php";
+
+$idUsuario = $_SESSION["id_usuario"];
+
+// Consulta para obtener datos completos del usuario + gimnasio
+$sql = "SELECT u.nombre, u.apellidos, u.email, u.rol, u.fecha_registro,
+               g.nombre AS gimnasio
+        FROM usuario u
+        LEFT JOIN gimnasio g ON u.id_gimnasio = g.id_gimnasio
+        WHERE u.id_usuario = ?";
+
+$stmt = $conexion->prepare($sql);
+$stmt->bind_param("i", $idUsuario);
+$stmt->execute();
+$resultado = $stmt->get_result();
+$usuario = $resultado->fetch_assoc();
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +52,7 @@ $nombre = $_SESSION["nombre"];
             <span>Inicio</span>
             </a>
 
-            <a href="#">
+            <a href="perfil.php">
             <img src="./assets/img/dashboard/icon-users.png">
             <span>Mi perfil</span>
             </a>
@@ -78,7 +96,7 @@ $nombre = $_SESSION["nombre"];
             </div>
 
             <div class="header-user">
-                <span class="user-name"><?php echo htmlspecialchars($nombre); ?></span>
+                <span class="user-name"><?php echo htmlspecialchars($usuario["nombre"]); ?></span>
                 <div class="user-avatar">
                     <img src="./assets/img/users/user-profile.jpg" alt="Usuario">
                 </div>
@@ -92,7 +110,7 @@ $nombre = $_SESSION["nombre"];
     <!-- Banner grande -->
     <section class="dashboard-banner">
         <div class="banner-text">
-            <h1>Bienvenida de nuevo, <?php echo htmlspecialchars($nombre); ?></h1>
+            <h1>Bienvenida de nuevo, <?php echo htmlspecialchars($usuario["nombre"]); ?></h1>
             <p class="subtitle">Tu progreso en Fit360</p>
             <span class="description">Revisa tus rutinas, clases y evolución de un vistazo.</span>
         </div>
