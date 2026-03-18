@@ -396,6 +396,19 @@
   text-align: center;
 }
 
+.avatar-block-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -40px;
+  margin-bottom: 15px;
+}
+
+.avatar-block-centered label {
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
 /* Responsive: en móviles se apila */
 @media (max-width: 600px) {
   .profile-header {

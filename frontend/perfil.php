@@ -18,14 +18,12 @@ $sql = "SELECT u.nombre, u.apellidos, u.email, u.rol, u.fecha_registro,
         LEFT JOIN gimnasio g ON u.id_gimnasio = g.id_gimnasio
         WHERE u.id_usuario = ?";
 
-
 $stmt = $conexion->prepare($sql);
 $stmt->bind_param("i", $idUsuario);
 $stmt->execute();
 $resultado = $stmt->get_result();
 $usuario = $resultado->fetch_assoc();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -80,72 +78,71 @@ $usuario = $resultado->fetch_assoc();
     <!-- Contenido principal -->
     <main class="main-content">
 
-        <!--<header class="dashboard-header">
-            <h1>Mi perfil</h1>
-        </header> -->
-
         <section class="profile-section">
 
             <div class="profile-card">
                 <div class="profile-header-centered">
 
+                    <h2 class="profile-title-centered">Información personal</h2>
+
                     <div class="avatar-container-centered">
-                       <img src="./assets/img/users/<?php echo htmlspecialchars($usuario['avatar']); ?>"
-                            alt="Avatar" 
-                            class="avatar-preview-centered">
+                        <img src="./assets/img/users/<?php echo htmlspecialchars($usuario['avatar']); ?>"
+                             alt="Avatar"
+                             class="avatar-preview-centered">
+                    </div>
+
+                </div>
+
+                <!-- IMPORTANTE: el input file va DENTRO del form -->
+                <form action="../backend/perfil-controller.php"
+                      method="POST"
+                      enctype="multipart/form-data"
+                      class="profile-form">
+
+                    <div class="avatar-block-centered">
+                        <label>Foto de perfil</label>
 
                         <label class="avatar-upload-centered">
                             Cambiar foto
                             <input type="file" name="avatar" accept="image/*">
                         </label>
                     </div>
-
-                    <h2 class="profile-title-centered">Información personal</h2>
-
-                </div>
-
-
-                <!--<h2>Información personal</h2> -->
-
-                <form action="../backend/perfil-controller.php" method="POST" enctype="multipart/form-data" class="profile-form">
-
                     <div class="form-group">
                         <label>Nombre</label>
-                        <input type="text" name="nombre" value="<?php echo $usuario['nombre']; ?>" required>
+                        <input type="text" name="nombre" value="<?php echo htmlspecialchars($usuario['nombre']); ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label>Apellidos</label>
-                        <input type="text" name="apellidos" value="<?php echo $usuario['apellidos']; ?>" required>
+                        <input type="text" name="apellidos" value="<?php echo htmlspecialchars($usuario['apellidos']); ?>" required>
                     </div>
 
                     <div class="form-group">
                         <label>Email (no editable)</label>
-                        <input type="email" value="<?php echo $usuario['email']; ?>" disabled>
+                        <input type="email" value="<?php echo htmlspecialchars($usuario['email']); ?>" disabled>
                     </div>
 
                     <div class="form-group">
                         <label>Gimnasio</label>
-                        <input type="text" value="<?php echo $usuario['gimnasio']; ?>" disabled>
+                        <input type="text" value="<?php echo htmlspecialchars($usuario['gimnasio']); ?>" disabled>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label>Rol</label>
                             <select name="rol" required>
-                                <option value="admin"   <?php if ($usuario['rol'] === 'admin') echo 'selected'; ?>>Admin</option>
-                                <option value="socio"   <?php if ($usuario['rol'] === 'socio') echo 'selected'; ?>>Socio</option>
+                                <option value="admin"      <?php if ($usuario['rol'] === 'admin') echo 'selected'; ?>>Admin</option>
+                                <option value="socio"      <?php if ($usuario['rol'] === 'socio') echo 'selected'; ?>>Socio</option>
                                 <option value="entrenador" <?php if ($usuario['rol'] === 'entrenador') echo 'selected'; ?>>Entrenador</option>
-                                <option value="dietista"<?php if ($usuario['rol'] === 'dietista') echo 'selected'; ?>>Dietista</option>
+                                <option value="dietista"   <?php if ($usuario['rol'] === 'dietista') echo 'selected'; ?>>Dietista</option>
                             </select>
                         </div>
 
                         <div class="form-group half">
                             <label>Fecha de registro</label>
-                            <input type="text" value="<?php echo $usuario['fecha_registro']; ?>" disabled>
+                            <input type="text" value="<?php echo htmlspecialchars($usuario['fecha_registro']); ?>" disabled>
                         </div>
                     </div>
-
 
                     <button type="submit" class="btn-save">Guardar cambios</button>
 
@@ -161,3 +158,4 @@ $usuario = $resultado->fetch_assoc();
 
 </body>
 </html>
+
