@@ -6,7 +6,7 @@ if (!isset($_SESSION["id_usuario"])) {
     exit();
 }
 
-require_once __DIR__ . '/../backend/config/conexion.php';
+require_once "../../backend/config/conexion.php";
 
 $idUsuario = $_SESSION["id_usuario"];
 
@@ -30,7 +30,7 @@ $usuario = $resultado->fetch_assoc();
 <head>
     <meta charset="UTF-8">
     <title>Mi perfil - Fit360</title>
-    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 
 <body>
@@ -39,37 +39,37 @@ $usuario = $resultado->fetch_assoc();
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="logo">
-            <img src="./assets/img/logo/logo-fit360.png" alt="Fit360">
+            <img src="../assets/img/logo/logo-fit360.png" alt="Fit360">
         </div>
 
         <nav>
             <a href="dashboard.php">
-                <img src="./assets/img/dashboard/icon-dashboard.png">
+                <img src="../assets/img/dashboard/icon-dashboard.png">
                 <span>Inicio</span>
             </a>
 
             <a href="perfil.php" class="active">
-                <img src="./assets/img/dashboard/icon-users.png">
+                <img src="../assets/img/dashboard/icon-users.png">
                 <span>Mi perfil</span>
             </a>
 
             <a href="#">
-                <img src="./assets/img/dashboard/icon-routines.png">
+                <img src="../assets/img/dashboard/icon-routines.png">
                 <span>Rutinas</span>
             </a>
 
             <a href="#">
-                <img src="./assets/img/dashboard/icon-nutrition.png">
+                <img src="../assets/img/dashboard/icon-nutrition.png">
                 <span>Nutrición</span>
             </a>
 
             <a href="#">
-                <img src="./assets/img/dashboard/icon-progress.png">
+                <img src="../assets/img/dashboard/icon-progress.png">
                 <span>Progreso</span>
             </a>
 
-            <a href="../backend/controllers/logout.php">
-                <img src="./assets/img/dashboard/icon-logout.png">
+            <a href="../../backend/controllers/logout.php">
+                <img src="../assets/img/dashboard/icon-logout.png">
                 <span>Cerrar sesión</span>
             </a>
         </nav>
@@ -86,7 +86,7 @@ $usuario = $resultado->fetch_assoc();
                     <h2 class="profile-title-centered">Información personal</h2>
 
                     <div class="avatar-container-centered">
-                        <img src="./assets/img/users/<?php echo htmlspecialchars($usuario['avatar']); ?>"
+                        <img src="../assets/img/users/<?php echo htmlspecialchars($usuario['avatar']); ?>"
                              alt="Avatar"
                              class="avatar-preview-centered">
                     </div>
@@ -94,7 +94,7 @@ $usuario = $resultado->fetch_assoc();
                 </div>
 
                 <!-- IMPORTANTE: el input file va DENTRO del form -->
-                <form action="../backend/controllers/perfil-controller.php"
+                <form action="../../backend/controllers/perfil-controller.php"
                       method="POST"
                       enctype="multipart/form-data"
                       class="profile-form">
@@ -158,4 +158,3 @@ $usuario = $resultado->fetch_assoc();
 
 </body>
 </html>
-

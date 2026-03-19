@@ -23,7 +23,7 @@ if (isset($_GET["msg"])) {
 <head>
     <meta charset="UTF-8">
     <title>Crear cuenta | Fit360</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
@@ -31,7 +31,7 @@ if (isset($_GET["msg"])) {
 
         <div class="login-left">
             <div class="logo">
-                <img src="assets/img/logo/logo-fit360.png" alt="Fit360">
+                <img src="../assets/img/logo/logo-fit360.png" alt="Fit360">
             </div>
 
             <h1>Crear cuenta</h1>
@@ -40,7 +40,7 @@ if (isset($_GET["msg"])) {
                 <p class="error"><?php echo $mensaje; ?></p>
             <?php endif; ?>
 
-            <form action="../backend/controllers/registro-controller.php" method="POST" class="login-form">
+            <form action="../../backend/controllers/registro-controller.php" method="POST" class="login-form">
 
                 <label>Nombre</label>
                 <input type="text" name="nombre" required>

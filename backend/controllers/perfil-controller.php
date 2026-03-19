@@ -4,7 +4,7 @@
 session_start();
 
 if (!isset($_SESSION["id_usuario"])) {
-    header("Location: ../frontend/login.php");
+    header("Location: ../frontend/views/login.php");
     exit();
 }
 
@@ -18,7 +18,7 @@ $apellidos = trim($_POST["apellidos"]);
 $rol = trim($_POST["rol"]); // nuevo campo
 
 if ($nombre === "" || $apellidos === "") {
-    header("Location: ../../frontend/perfil.php?msg=campos_vacios");
+    header("Location: ../../frontend/views/perfil.php?msg=campos_vacios");
     exit();
 }
 
@@ -100,10 +100,10 @@ if ($stmt->execute()) {
     // Actualizar sesión para que el dashboard muestre el nombre actualizado
     $_SESSION["nombre"] = $nombre;
 
-    header("Location: ../../frontend/perfil.php?msg=ok");
+    header("Location: ../../frontend/views/perfil.php?msg=ok");
     exit();
 } else {
-    header("Location: ../../frontend/perfil.php?msg=error");
+    header("Location: ../../frontend/views/perfil.php?msg=error");
     exit();
 }
 ?>
