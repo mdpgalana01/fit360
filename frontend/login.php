@@ -41,7 +41,7 @@ if (isset($_GET["error"])) {
                 <p class="error"><?php echo $errorMsg; ?></p>
             <?php endif; ?>
 
-            <form action="../backend/login-controller.php" method="POST" class="login-form">
+            <form action="../backend/controllers/login-controller.php" method="POST" class="login-form">
 
                 <label>Email</label>
                 <input type="email" name="email" required>

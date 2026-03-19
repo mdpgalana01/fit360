@@ -37,7 +37,7 @@ if (isset($_GET["msg"])) {
                 <p class="error"><?php echo $mensaje; ?></p>
             <?php endif; ?>
 
-            <form action="../backend/recuperar-controller.php" method="POST" class="login-form">
+            <form action="../backend/controllers/recuperar-controller.php" method="POST" class="login-form">
 
                 <label>Email</label>
                 <input type="email" name="email" required>

@@ -8,7 +8,7 @@ if (!isset($_SESSION["id_usuario"])) {
     exit();
 }
 
-require_once "conexion.php";
+require_once __DIR__ . '/../config/conexion.php';
 
 $idUsuario = $_SESSION["id_usuario"];
 
@@ -18,7 +18,7 @@ $apellidos = trim($_POST["apellidos"]);
 $rol = trim($_POST["rol"]); // nuevo campo
 
 if ($nombre === "" || $apellidos === "") {
-    header("Location: ../frontend/perfil.php?msg=campos_vacios");
+    header("Location: ../../frontend/perfil.php?msg=campos_vacios");
     exit();
 }
 
@@ -59,7 +59,7 @@ if (isset($_FILES["avatar"]) && $_FILES["avatar"]["error"] === UPLOAD_ERR_OK) {
         $nuevoNombre = "avatar_" . $idUsuario . "_" . time() . "." . $extension;
 
         // Ruta correcta donde guardar la imagen
-        $rutaDestino = __DIR__ . "/../frontend/assets/img/users/" . $nuevoNombre;
+        $rutaDestino = __DIR__ . "/../../frontend/assets/img/users/" . $nuevoNombre;
 
 //echo "<p>Ruta destino: $rutaDestino</p>";  //************************************************************ */
 //echo "<p>Archivo temporal: $nombreTemp</p>"; //************************************************************ */
@@ -100,10 +100,10 @@ if ($stmt->execute()) {
     // Actualizar sesión para que el dashboard muestre el nombre actualizado
     $_SESSION["nombre"] = $nombre;
 
-    header("Location: ../frontend/perfil.php?msg=ok");
+    header("Location: ../../frontend/perfil.php?msg=ok");
     exit();
 } else {
-    header("Location: ../frontend/perfil.php?msg=error");
+    header("Location: ../../frontend/perfil.php?msg=error");
     exit();
 }
 ?>

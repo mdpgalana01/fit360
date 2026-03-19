@@ -9,7 +9,7 @@ if (!isset($_SESSION["id_usuario"])) {
 
 // $nombre = $_SESSION["nombre"];
 
-require_once "../backend/conexion.php";
+require_once "../backend/config/conexion.php";
 
 $idUsuario = $_SESSION["id_usuario"];
 
@@ -72,7 +72,7 @@ $usuario = $resultado->fetch_assoc();
             <span>Progreso</span>
             </a>
 
-            <a href="../backend/logout.php">
+            <a href="../backend/controllers/logout.php">
             <img src="./assets/img/dashboard/icon-logout.png">
             <span>Cerrar sesión</span>
             </a>

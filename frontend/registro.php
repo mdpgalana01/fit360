@@ -40,7 +40,7 @@ if (isset($_GET["msg"])) {
                 <p class="error"><?php echo $mensaje; ?></p>
             <?php endif; ?>
 
-            <form action="../backend/registro-controller.php" method="POST" class="login-form">
+            <form action="../backend/controllers/registro-controller.php" method="POST" class="login-form">
 
                 <label>Nombre</label>
                 <input type="text" name="nombre" required>

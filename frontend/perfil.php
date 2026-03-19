@@ -6,7 +6,7 @@ if (!isset($_SESSION["id_usuario"])) {
     exit();
 }
 
-require_once "../backend/conexion.php";
+require_once __DIR__ . '/../backend/config/conexion.php';
 
 $idUsuario = $_SESSION["id_usuario"];
 
@@ -68,7 +68,7 @@ $usuario = $resultado->fetch_assoc();
                 <span>Progreso</span>
             </a>
 
-            <a href="../backend/logout.php">
+            <a href="../backend/controllers/logout.php">
                 <img src="./assets/img/dashboard/icon-logout.png">
                 <span>Cerrar sesión</span>
             </a>
@@ -94,7 +94,7 @@ $usuario = $resultado->fetch_assoc();
                 </div>
 
                 <!-- IMPORTANTE: el input file va DENTRO del form -->
-                <form action="../backend/perfil-controller.php"
+                <form action="../backend/controllers/perfil-controller.php"
                       method="POST"
                       enctype="multipart/form-data"
                       class="profile-form">
