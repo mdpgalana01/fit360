@@ -121,9 +121,18 @@
   gap: 10px;
 }
 
-.header-user .user-name {
+.header-user {
   font-size: 14px;
   color: #333;
+}
+
+.user-name-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.user-name-link:hover {
+  opacity: 0.8;
 }
 
 .user-avatar img {

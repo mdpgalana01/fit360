@@ -41,6 +41,11 @@ if (isset($_GET["error"])) {
                 <p class="error"><?php echo $errorMsg; ?></p>
             <?php endif; ?>
 
+            <?php if (isset($_GET["msg"]) && $_GET["msg"] === "registro_ok"): ?>
+                <p class="success">Tu cuenta ha sido creada correctamente. Ahora puedes iniciar sesión.</p>
+            <?php endif; ?>
+
+
             <form action="../../backend/controllers/login-controller.php" method="POST" class="login-form">
 
                 <label>Email</label>

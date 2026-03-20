@@ -41,10 +41,11 @@ $stmt = $conexion->prepare($sql);
 $stmt->bind_param("ssss", $nombre, $apellidos, $email, $hash);
 
 if ($stmt->execute()) {
-    header("Location: ../../frontend/views/registro.php?msg=registro_ok");
+    header("Location: ../../frontend/views/login.php?msg=registro_ok");
     exit();
 } else {
     header("Location: ../../frontend/views/registro.php?msg=error");
     exit();
 }
+
 ?>

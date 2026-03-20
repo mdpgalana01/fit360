@@ -85,10 +85,20 @@ $usuario = $resultado->fetch_assoc();
 
                     <h2 class="profile-title-centered">Información personal</h2>
 
+                    <?php
+                        $avatar = $usuario['avatar'] ?? "";
+
+                        // Si no hay avatar, usar el avatar por defecto
+                        if ($avatar === "" || !file_exists(__DIR__ . "/../assets/img/users/" . $avatar)) {
+                            $avatar = "profile-avatar.png";
+
+                        }
+                    ?>
+
                     <div class="avatar-container-centered">
-                        <img src="../assets/img/users/<?php echo htmlspecialchars($usuario['avatar']); ?>"
-                             alt="Avatar"
-                             class="avatar-preview-centered">
+                        <img src="../assets/img/users/<?php echo htmlspecialchars($avatar); ?>"
+                            alt="Avatar"
+                            class="avatar-preview-centered">
                     </div>
 
                 </div>

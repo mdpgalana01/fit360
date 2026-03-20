@@ -1,14 +1,40 @@
 <?php
-session_start();
+    session_start();
+    require_once "../../backend/config/conexion.php"; // ← nombre correcto del archivo
 
-// Comprobar que el usuario ha iniciado sesión
-if (!isset($_SESSION["id_usuario"])) {
-    header("Location: login.php");
-    exit();
-}
+    // Comprobar que el usuario ha iniciado sesión
+    if (!isset($_SESSION["id_usuario"])) {
+        header("Location: login.php");
+        exit();
+    }
 
-$nombre = $_SESSION["nombre"];
+    $id = $_SESSION["id_usuario"];
+
+    // Consultar datos del usuario (nombre + avatar)
+    $sql = "SELECT nombre, avatar FROM usuario WHERE id_usuario = ?";
+    $stmt = $conexion->prepare($sql);
+
+    if (!$stmt) {
+        die("Error en prepare(): " . $conexion->error);
+    }
+
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $usuario = $result->fetch_assoc();
+
+
+    // Variables disponibles para el dashboard
+    $nombre = $usuario['nombre'];
+    $avatar = $usuario['avatar'];
+
+    // Si no hay avatar o el archivo no existe → usar el avatar por defecto
+    if ($avatar === "" || !file_exists(__DIR__ . "/../assets/img/users/" . $avatar)) {
+        $avatar = "profile-avatar.png";
+    }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -77,12 +103,24 @@ $nombre = $_SESSION["nombre"];
                 <img src="../assets/img/dashboard/icon-settings.png" class="header-icon" alt="">
             </div>
 
+            <?php
+                $avatar = $usuario['avatar'] ?? "";
+
+                if ($avatar === "" || !file_exists(__DIR__ . "/../assets/img/users/" . $avatar)) {
+                    $avatar = "profile-avatar.png";
+                }
+            ?>
+
             <div class="header-user">
-                <span class="user-name"><?php echo htmlspecialchars($nombre); ?></span>
+                <a href="perfil.php" class="user-name-link">
+                    <?php echo htmlspecialchars($nombre); ?>
+                </a>
+
                 <div class="user-avatar">
-                    <img src="../assets/img/users/user-profile.jpg" alt="Usuario">
+                    <img src="../assets/img/users/<?php echo htmlspecialchars($avatar); ?>" alt="Usuario">
                 </div>
             </div>
+
 
         </div>
 
@@ -92,7 +130,8 @@ $nombre = $_SESSION["nombre"];
     <!-- Banner grande -->
     <section class="dashboard-banner">
         <div class="banner-text">
-            <h1>Bienvenida de nuevo, <?php echo htmlspecialchars($nombre); ?></h1>
+            <h1>Hola, <?php echo htmlspecialchars($nombre); ?></h1>
+
             <p class="subtitle">Tu progreso en Fit360</p>
             <span class="description">Revisa tus rutinas, clases y evolución de un vistazo.</span>
         </div>

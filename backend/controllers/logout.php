@@ -1,6 +1,7 @@
-// Cerrar sesión
 <?php
 session_start();
+
+// Cerrar sesión completamente
 session_unset();
 session_destroy();
 
