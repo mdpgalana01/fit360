@@ -1,0 +1,141 @@
+/* ======== ESTILO CORPORATIVO FIT360 ======== */
+
+body {
+  background: #f7f8fa;
+  font-family: "Inter", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.progreso-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* TITULOS */
+.progreso-container h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.progreso-container h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #444;
+  margin: 30px 0 15px;
+}
+
+/* TARJETA FORMULARIO */
+.progreso-card {
+  background: #ffffff;
+  padding: 26px 32px; /* más aire a los lados */
+  border-radius: 14px;
+  border: 1px solid #ececec;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.progreso-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #ff4444;
+  border-radius: 14px 14px 0 0;
+}
+
+/* FORMULARIO */
+.progreso-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  padding-right: 20px; /* separa del borde derecho */
+  padding-left: 5px; /* opcional, para equilibrar */
+}
+
+.progreso-form label {
+  font-weight: 600;
+  color: #555;
+}
+
+.progreso-form input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+/* BOTÓN */
+.btn-progreso {
+  grid-column: span 2;
+  padding: 12px 20px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.btn-progreso:hover {
+  background: #e63c3c;
+}
+
+/* TABLA */
+.progreso-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.progreso-table th {
+  background: #ff4444;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.progreso-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  color: #333;
+}
+
+.progreso-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.msg {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.msg.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.msg.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
