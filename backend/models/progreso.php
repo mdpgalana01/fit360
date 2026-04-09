@@ -45,4 +45,40 @@ class Progreso
         $resultado = $stmt->get_result();
         return $resultado->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function obtenerPorId($id) {
+        $stmt = $this->conn->prepare("SELECT * FROM progreso WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_assoc();
+    }
+
+
+    public function actualizar($data) {
+        $stmt = $this->conn->prepare("
+            UPDATE progreso 
+            SET peso = ?, grasa = ?, pecho = ?, cintura = ?, cadera = ?
+            WHERE id = ?
+        ");
+
+        $stmt->bind_param(
+            "dddddi",
+            $data['peso'],
+            $data['grasa'],
+            $data['pecho'],
+            $data['cintura'],
+            $data['cadera'],
+            $data['id']
+        );
+
+        return $stmt->execute();
+    }
+
+
+    public function eliminar($id) {
+        $stmt = $this->conn->prepare("DELETE FROM progreso WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        return $stmt->execute();
+    }
+
 }

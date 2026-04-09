@@ -63,7 +63,7 @@ $usuario = $resultado->fetch_assoc();
                 <span>Nutrición</span>
             </a>
 
-            <a href="#">
+            <a href="progreso.php" class="active">
                 <img src="../assets/img/dashboard/icon-progress.png">
                 <span>Progreso</span>
             </a>

@@ -67,6 +67,38 @@ switch ($accion) {
         header("Location: ../../frontend/views/progreso.php?ok=1");
         exit;
 
+    case 'editar':
+        $id = $_POST['id'];
+        header("Location: ../../frontend/views/progreso.php?editar=$id");
+        exit;
+
+    
+    case 'actualizar':
+        $id = $_POST['id'];
+
+        $data = [
+            'id'             => $id,
+            'peso'           => $_POST['peso'],
+            'grasa'          => $_POST['grasa'] !== '' ? $_POST['grasa'] : null,
+            'pecho'          => $_POST['pecho'] !== '' ? $_POST['pecho'] : null,
+            'cintura'        => $_POST['cintura'] !== '' ? $_POST['cintura'] : null,
+            'cadera'         => $_POST['cadera'] !== '' ? $_POST['cadera'] : null,
+        ];
+
+        $progreso->actualizar($data);
+
+        header("Location: ../../frontend/views/progreso.php?ok=editado");
+        exit;
+
+    case 'eliminar':
+    $id = $_POST['id'];
+
+    $progreso->eliminar($id);
+
+    header("Location: ../../frontend/views/progreso.php?ok=eliminado");
+    exit;
+  
+
     default:
         // Obtener registros del usuario
         $registros = $progreso->obtenerPorUsuario($_SESSION['id_usuario']);
