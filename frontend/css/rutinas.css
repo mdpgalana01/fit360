@@ -1,0 +1,64 @@
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-card,
+.tabla-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-card h2,
+.tabla-card h2 {
+  margin-bottom: 15px;
+}
+
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-card button {
+  background: #007bff;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-card button:hover {
+  background: #0056b3;
+}
+
+.edit {
+  border-left: 5px solid #ff9800;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+table a {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
