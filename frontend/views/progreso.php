@@ -66,12 +66,12 @@ if (!empty($registros)) {
                 <span>Mi perfil</span>
             </a>
 
-            <a href="#">
+            <a href="rutinas.php">
             <img src="../assets/img/dashboard/icon-routines.png">
             <span>Rutinas</span>
             </a>
 
-            <a href="#">
+            <a href="nutricion.php">
             <img src="../assets/img/dashboard/icon-nutrition.png">
             <span>Nutrición</span>
             </a>
