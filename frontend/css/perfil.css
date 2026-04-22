@@ -1,0 +1,36 @@
+/* Ajustes específicos SOLO para la página Mi Perfil */
+
+/* Espaciado general */
+.profile-section {
+  padding-top: 20px;
+}
+
+/* Botón Guardar cambios */
+.btn-save {
+  padding: 10px 22px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+/* Botón Cambiar foto */
+.avatar-upload-centered {
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 8px;
+}
+
+/* Ajuste de avatar */
+.avatar-preview-centered {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Responsive para Mi Perfil */
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

@@ -66,12 +66,12 @@ if (!empty($registros)) {
                 <span>Mi perfil</span>
             </a>
 
-            <a href="#">
+            <a href="rutinas.php">
             <img src="../assets/img/dashboard/icon-routines.png">
             <span>Rutinas</span>
             </a>
 
-            <a href="#">
+            <a href="nutricion.php">
             <img src="../assets/img/dashboard/icon-nutrition.png">
             <span>Nutrición</span>
             </a>
@@ -199,7 +199,7 @@ if (!empty($registros)) {
                                 <td><?= $r['pecho'] !== null ? htmlspecialchars($r['pecho']) . ' cm' : '-' ?></td>
                                 <td><?= $r['cintura'] !== null ? htmlspecialchars($r['cintura']) . ' cm' : '-' ?></td>
                                 <td><?= $r['cadera'] !== null ? htmlspecialchars($r['cadera']) . ' cm' : '-' ?></td>
-                                <td>
+                                <!-- <td>
                                     <form action="../../backend/controllers/progreso-controller.php" method="POST" style="display:inline;">
                                         <input type="hidden" name="accion" value="editar">
                                         <input type="hidden" name="id" value="<?= $r['id'] ?>">
@@ -212,7 +212,12 @@ if (!empty($registros)) {
                                         <input type="hidden" name="id" value="<?= $r['id'] ?>">
                                         <button type="submit" class="btn-eliminar">Eliminar</button>
                                     </form>
+                                </td> -->
+                                <td class="acciones">
+                                    <a href="progreso.php?editar=<?= $r['id'] ?>">✏️ Editar</a>
+                                    <a href="progreso.php?eliminar=<?= $r['id'] ?>" onclick="return confirm('¿Eliminar registro?')">🗑️ Eliminar</a>
                                 </td>
+
 
                             </tr>
                         <?php endforeach; ?>

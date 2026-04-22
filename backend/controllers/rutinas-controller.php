@@ -2,10 +2,23 @@
 require_once __DIR__ . '/../models/rutinas.php';
 require_once __DIR__ . '/../config/session.php';
 
+
 $rutinas = new Rutinas();
+
+// Modo edición
+if (isset($_POST['editar_rutina'])) {
+    $id = $_POST['id'];
+    header("Location: ../../frontend/views/rutinas.php?editar=$id");
+    exit;
+}
 
 // Crear rutina
 if (isset($_POST['crear_rutina'])) {
+    if (empty($_POST['nombre'])) {
+        header("Location: ../../frontend/views/rutinas.php?error=nombre");
+        exit;
+    }
+
     $rutinas->crear(
         $_SESSION['id_usuario'],
         $_POST['nombre'],
@@ -38,3 +51,6 @@ if (isset($_GET['eliminar'])) {
     header("Location: ../../frontend/views/rutinas.php?ok=eliminada");
     exit;
 }
+
+
+
