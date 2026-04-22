@@ -16,6 +16,17 @@ if (isset($_GET['editar'])) {
     <link rel="stylesheet" href="../css/rutinas.css">
 </head>
 
+<script>
+    setTimeout(() => {
+        const msg = document.querySelector('.msg');
+        if (msg) {
+            msg.style.transition = "opacity 0.5s";
+            msg.style.opacity = "0";
+            setTimeout(() => msg.remove(), 500);
+        }
+    }, 3000);
+</script>
+
 <body>
 
 <div class="dashboard-container">
@@ -59,10 +70,29 @@ if (isset($_GET['editar'])) {
         </nav>
     </aside>
 
-    <!-- Contenido principal -->
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="main-content">
 
-        <h1 class="page-title">Mis Rutinas</h1>
+        <div class="rutinas-container">
+            <h1 class="page-title">Mis Rutinas</h1>
+
+            <?php if (isset($_GET['ok'])): ?>
+                <div class="msg success">Registro guardado correctamente.</div>
+            <?php endif; ?>
+
+            <?php if (isset($_GET['error']) && $_GET['error'] === 'campos'): ?>
+                <div class="msg error">El peso es obligatorio.</div>
+            <?php endif; ?>
+
+            <?php if (isset($_GET['error']) && $_GET['error'] === 'numerico'): ?>
+                <div class="msg error">Todos los valores deben ser numéricos.</div>
+            <?php endif; ?>
+
+            <?php if (isset($_GET['error']) && $_GET['error'] === 'negativo'): ?>
+                <div class="msg error">El peso no puede ser negativo.</div>
+            <?php endif; ?>
+
+        
 
         <?php if (!isset($rutinaEditar)): ?>
         <section class="form-card">
@@ -108,10 +138,11 @@ if (isset($_GET['editar'])) {
                     <td><?= $r['nombre'] ?></td>
                     <td><?= $r['dia_semana'] ?></td>
                     <td><?= $r['duracion'] ?> min</td>
-                    <td>
-                        <a href="rutinas.php?editar=<?= $r['id'] ?>">Editar</a>
-                        <a href="rutinas.php?eliminar=<?= $r['id'] ?>" onclick="return confirm('¿Eliminar rutina?')">Eliminar</a>
+                    <td class="acciones">
+                        <a href="rutinas.php?editar=<?= $r['id'] ?>">✏️ Editar</a>
+                        <a href="rutinas.php?eliminar=<?= $r['id'] ?>" onclick="return confirm('¿Eliminar rutina?')">🗑️ Eliminar</a>
                     </td>
+
                 </tr>
                 <?php endforeach; ?>
 

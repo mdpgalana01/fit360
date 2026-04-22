@@ -31,6 +31,7 @@ $usuario = $resultado->fetch_assoc();
     <meta charset="UTF-8">
     <title>Mi perfil - Fit360</title>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/perfil.css">
 </head>
 
 <body>
