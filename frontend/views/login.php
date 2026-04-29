@@ -49,24 +49,33 @@ if (isset($_GET["error"])) {
             <form action="../../backend/controllers/login-controller.php" method="POST" class="login-form">
 
                 <label>Email</label>
-                <input type="email" name="email" required>
+                <input type="email" id="email" name="email" required>
+                <div id="email-error" class="error-msg"></div>
 
                 <label>Contraseña</label>
-                <input type="password" name="contrasena" required>
+                <input type="password" id="password" name="contrasena" required>
 
-                <button type="submit" class="btn-login">Entrar</button>
+                <!-- Botón mostrar/ocultar contraseña -->
+                <button type="button" id="toggle-pass" class="toggle-pass">Mostrar</button>
+
+                <div id="password-error" class="error-msg"></div>
+
+                <button type="submit" id="btn-login" class="btn-login">Entrar</button>
 
                 <div class="links">
                     <a href="recuperar.php">¿Has olvidado tu contraseña?</a>
                     <a href="registro.php">Crear cuenta</a>
                 </div>
             </form>
+
         </div>
 
         <!-- Columna derecha -->
         <div class="login-right"></div>
 
     </div>
+    <script src="../js/login.js"></script>
+
 </body>
 
 </html>
