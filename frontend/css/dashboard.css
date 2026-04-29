@@ -418,6 +418,66 @@
   font-weight: 600;
 }
 
+/* ================================
+   PANTALLA DE CARGA (FULLSCREEN REAL)
+================================ */
+
+#loading-screen {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: #0d0d0d;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 999999999 !important;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.loading-content {
+  text-align: center;
+  color: white;
+  font-family: "Inter", sans-serif;
+  transform: translateY(40px); /* BAJA TODO EL BLOQUE */
+}
+
+.loading-logo {
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+.loading-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.loading-bar {
+  width: 260px;
+  height: 12px;
+  background: #333;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.loading-progress {
+  width: 0%;
+  height: 100%;
+  background: #28a745;
+  transition: width 0.15s ease-out;
+}
+
+#loading-percent {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
 /* Responsive: en móviles se apila */
 @media (max-width: 600px) {
   .profile-header {

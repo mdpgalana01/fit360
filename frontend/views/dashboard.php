@@ -47,6 +47,21 @@
 </head>
 <body>
 
+<!-- Pantalla de carga -->
+<div id="loading-screen">
+    <div class="loading-content">
+        <img src="../assets/img/logo/logo-fit360.png" class="loading-logo" alt="Fit360">
+        <p class="loading-text">Cargando tu espacio...</p>
+
+        <div class="loading-bar">
+            <div class="loading-progress" id="loading-progress"></div>
+        </div>
+
+        <span id="loading-percent">0%</span>
+    </div>
+</div>
+
+
 <div class="dashboard-container">
 
     <aside class="sidebar">
@@ -188,6 +203,8 @@
 </main>
 
 </div>
+
+<script src="../js/dashboard.js"></script>
 
 </body>
 </html>

@@ -62,6 +62,31 @@ h1 {
   margin-top: 5px;
 }
 
+/* --- Validación y mensajes de error --- */
+.error-msg {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+/* --- Botón mostrar/ocultar contraseña --- */
+.toggle-pass {
+  margin-top: 6px;
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  font-size: 14px;
+  align-self: flex-end;
+}
+
+/* --- Estado del botón al enviar --- */
+.btn-login:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .btn-login {
   margin-top: 25px;
   padding: 14px;
