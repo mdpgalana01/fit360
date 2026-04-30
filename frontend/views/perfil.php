@@ -92,19 +92,17 @@ $usuario = $resultado->fetch_assoc();
                         // Si no hay avatar, usar el avatar por defecto
                         if ($avatar === "" || !file_exists(__DIR__ . "/../assets/img/users/" . $avatar)) {
                             $avatar = "profile-avatar.png";
-
                         }
                     ?>
 
                     <div class="avatar-container-centered">
                         <img src="../assets/img/users/<?php echo htmlspecialchars($avatar); ?>"
-                            alt="Avatar"
-                            class="avatar-preview-centered">
+                             alt="Avatar"
+                             class="avatar-preview-centered">
                     </div>
 
                 </div>
 
-                <!-- IMPORTANTE: el input file va DENTRO del form -->
                 <form action="../../backend/controllers/perfil-controller.php"
                       method="POST"
                       enctype="multipart/form-data"
@@ -118,6 +116,7 @@ $usuario = $resultado->fetch_assoc();
                             <input type="file" name="avatar" accept="image/*">
                         </label>
                     </div>
+
                     <div class="form-group">
                         <label>Nombre</label>
                         <input type="text" name="nombre" value="<?php echo htmlspecialchars($usuario['nombre']); ?>" required>
@@ -139,14 +138,9 @@ $usuario = $resultado->fetch_assoc();
                     </div>
 
                     <div class="form-row">
-                        <div class="form-group">
+                        <div class="form-group half">
                             <label>Rol</label>
-                            <select name="rol" required>
-                                <option value="admin"      <?php if ($usuario['rol'] === 'admin') echo 'selected'; ?>>Admin</option>
-                                <option value="socio"      <?php if ($usuario['rol'] === 'socio') echo 'selected'; ?>>Socio</option>
-                                <option value="entrenador" <?php if ($usuario['rol'] === 'entrenador') echo 'selected'; ?>>Entrenador</option>
-                                <option value="dietista"   <?php if ($usuario['rol'] === 'dietista') echo 'selected'; ?>>Dietista</option>
-                            </select>
+                            <input type="text" value="<?php echo htmlspecialchars($usuario['rol']); ?>" disabled>
                         </div>
 
                         <div class="form-group half">
@@ -165,7 +159,7 @@ $usuario = $resultado->fetch_assoc();
 
     </main>
 
-</div> <!-- cierre de dashboard-container -->
+</div>
 
 </body>
 </html>

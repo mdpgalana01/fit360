@@ -56,7 +56,24 @@ $_SESSION["email"]       = $usuario["email"];
 $_SESSION["rol"]         = $usuario["rol"];
 $_SESSION["id_gimnasio"] = $usuario["id_gimnasio"];
 
-// 6. Redirigir al dashboard del frontend
-header("Location: ../../frontend/views/dashboard.php");
+// 6. Redirigir al dashboard del frontend dependiendo del rol
+switch ($usuario["rol"]) {
+    case "admin":
+        header("Location: ../../frontend/views/admin/dashboard.php");
+        break;
+
+    case "entrenador":
+        header("Location: ../../frontend/views/entrenador/dashboard.php");
+        break;
+
+    case "dietista":
+        header("Location: ../../frontend/views/dietista/dashboard.php");
+        break;
+
+    case "socio":
+    default:
+        header("Location: ../../frontend/views/dashboard.php");
+        break;
+}
 exit();
 ?>
