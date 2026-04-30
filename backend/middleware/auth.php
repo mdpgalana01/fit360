@@ -1,3 +1,4 @@
+<!-- archivo de seguridad (middleware) -->
 <?php
 session_start();
 
