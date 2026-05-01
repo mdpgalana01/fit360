@@ -6,6 +6,9 @@
 
 # Si hubiera un error, aparecerá un mensaje: Error de conexión...
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ 
 $host = "localhost";
 $usuario = "root";
 $contrasena = "";
