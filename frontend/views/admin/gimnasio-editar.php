@@ -1,13 +1,32 @@
 <?php
 require_once "../../../backend/middleware/admin.php";
 require_once "../../../backend/config/conexion.php";
+
+if (!isset($_GET["id"])) {
+    header("Location: gimnasios.php");
+    exit();
+}
+
+$id = $_GET["id"];
+
+$sql = "SELECT * FROM gimnasio WHERE id_gimnasio = ?";
+$stmt = $conexion->prepare($sql);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$resultado = $stmt->get_result();
+$gimnasio = $resultado->fetch_assoc();
+
+if (!$gimnasio) {
+    echo "Gimnasio no encontrado.";
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Crear gimnasio - Fit360</title>
+    <title>Editar gimnasio - Fit360</title>
     <link rel="stylesheet" href="../../css/dashboard.css">
     <link rel="stylesheet" href="../../css/admin-forms.css">
 
@@ -52,43 +71,47 @@ require_once "../../../backend/config/conexion.php";
         <div class="admin-container">
 
             <header class="dashboard-header">
-                <h1>Crear gimnasio</h1>
+                <h1>Editar gimnasio</h1>
             </header>
 
             <section class="admin-card">
                 <h2>Datos del gimnasio</h2>
 
                 <form action="../../../backend/controllers/gimnasio-controller.php" method="POST" class="admin-form">
-                    <input type="hidden" name="accion" value="crear">
+
+                    <input type="hidden" name="accion" value="editar">
+                    <input type="hidden" name="id_gimnasio" value="<?= $gimnasio['id_gimnasio'] ?>">
 
                     <label>Nombre del gimnasio</label>
-                    <input type="text" name="nombre" required>
+                    <input type="text" name="nombre" value="<?= htmlspecialchars($gimnasio['nombre']) ?>" required>
 
                     <label>Dirección</label>
-                    <input type="text" name="direccion" required>
+                    <input type="text" name="direccion" value="<?= htmlspecialchars($gimnasio['direccion']) ?>" required>
 
                     <label>Email de contacto</label>
-                    <input type="email" name="email_contacto" required>
+                    <input type="email" name="email_contacto" value="<?= htmlspecialchars($gimnasio['email_contacto']) ?>" required>
 
                     <label>Teléfono</label>
-                    <input type="text" name="telefono" required>
+                    <input type="text" name="telefono" value="<?= htmlspecialchars($gimnasio['telefono']) ?>" required>
 
                     <label>Activo</label>
                     <select name="activo">
-                        <option value="1">Sí</option>
-                        <option value="0">No</option>
+                        <option value="1" <?= $gimnasio['activo'] ? 'selected' : '' ?>>Sí</option>
+                        <option value="0" <?= !$gimnasio['activo'] ? 'selected' : '' ?>>No</option>
                     </select>
 
                     <div class="admin-form-actions">
-                        <button type="submit" class="admin-btn-primary">Guardar gimnasio</button>
+                        <button type="submit" class="admin-btn-primary">Guardar cambios</button>
                         <a href="gimnasios.php" class="admin-btn-secondary">Cancelar</a>
                     </div>
+
                 </form>
             </section>
 
         </div>
 
     </main>
+
 
 </div>
 
