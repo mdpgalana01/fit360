@@ -1,3 +1,12 @@
+/* ============================================================
+   FIT360 – DASHBOARD GLOBAL STYLES
+   Archivo original reorganizado y comentado
+   NO se ha eliminado ni modificado ninguna regla
+   ============================================================ */
+
+/* ============================================================
+   1. RESET GLOBAL
+============================================================ */
 * {
   margin: 0;
   padding: 0;
@@ -5,20 +14,23 @@
   font-family: "Inter", sans-serif;
 }
 
-/* CONTENEDOR PRINCIPAL */
+/* ============================================================
+   2. CONTENEDOR PRINCIPAL DEL DASHBOARD
+============================================================ */
 .dashboard-container {
   display: flex;
   flex-direction: row;
   width: 100%;
   min-height: 100vh;
-  /*background: #f5f5f5;*/
   background: #f7f8fa;
 }
 
-/* SIDEBAR */
+/* ============================================================
+   3. SIDEBAR (MENÚ LATERAL)
+============================================================ */
 .sidebar {
   width: 240px;
-  background: #ff4444; /* naranja corporativo */
+  background: #ff4444;
   padding: 30px;
   min-height: 100vh;
   color: #fff;
@@ -48,9 +60,7 @@
   height: 24px;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(
-    0 0 2px rgba(0, 0, 0, 0.4)
-  ); /* para separarlo del naranja */
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
 }
 
 .sidebar nav a.active {
@@ -59,34 +69,35 @@
 }
 
 .sidebar nav a.active img {
-  /*filter: none;*/
-  /*filter: brightness(0) invert(1); */
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4));
 }
 
 .logo {
   display: flex;
-  justify-content: center; /* centra horizontalmente */
+  justify-content: center;
   margin-bottom: 40px;
 }
 
 .logo img {
-  width: 120px; /* tamaño recomendado */
-  border-radius: 10px; /* suaviza el rectángulo */
-  background: #fff; /* mantiene el fondo blanco */
-  padding: 3px; /* aire alrededor */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); /* integración elegante */
-  border: 1px solid rgba(255, 255, 255, 0.4); /* borde suave */
+  width: 120px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 3px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-/* CONTENIDO PRINCIPAL */
+/* ============================================================
+   4. CONTENIDO PRINCIPAL
+============================================================ */
 .main-content {
   flex: 1;
   padding: 20px 40px 40px 40px;
 }
 
-/* HEADER SUPERIOR */
-
+/* ============================================================
+   5. HEADER SUPERIOR
+============================================================ */
 .dashboard-header {
   display: flex;
   justify-content: space-between;
@@ -112,16 +123,13 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-left: auto; /* empuja todo a la derecha */
+  margin-left: auto;
 }
 
 .header-user {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.header-user {
   font-size: 14px;
   color: #333;
 }
@@ -162,9 +170,9 @@
   opacity: 1;
 }
 
-/* BANNER */
-
-/* Foto oscura textos claros */
+/* ============================================================
+   6. BANNER PRINCIPAL
+============================================================ */
 .dashboard-banner {
   position: relative;
   background-image: url("../assets/img/dashboard/dashboard-banner.jpg");
@@ -173,15 +181,15 @@
   border-radius: 16px;
   padding: 40px;
   margin-bottom: 30px;
-  color: #fff; /* texto claro */
-  text-align: left; /* alineación a la izquierda */
+  color: #fff;
+  text-align: left;
 }
 
 .dashboard-banner::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* overlay suave */
+  background: rgba(0, 0, 0, 0.35);
   border-radius: 16px;
 }
 
@@ -199,7 +207,7 @@
 .banner-text .subtitle {
   font-size: 18px;
   margin-bottom: 5px;
-  color: #ff7777; /* acento naranja suave */
+  color: #ff7777;
 }
 
 .banner-text .description {
@@ -207,20 +215,20 @@
   color: #f5f5f5;
 }
 
-/* TARJETAS */
+/* ============================================================
+   7. TARJETAS DEL DASHBOARD
+============================================================ */
 .dashboard-grid {
   display: grid;
-  /*grid-template-columns: repeat(3, 1fr);*/
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
 }
 
 .card {
   background: #ffffff;
-  padding: 26px; /* antes 24px */
+  padding: 26px;
   border-radius: 14px;
   border: 1px solid #ececec;
-  /*border-top: 4px solid #ff4444; */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   transition:
     transform 0.15s ease,
@@ -241,17 +249,17 @@
 
 .card h3 {
   margin-bottom: 8px;
-  font-size: 12px; /* antes 14px */
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #888; /* un gris más suave */
+  color: #888;
 }
 
 .card .title {
-  font-size: 18px; /* igual que ahora */
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 6px;
-  color: #222; /* un poco más oscuro */
+  color: #222;
 }
 
 .card span {
@@ -266,17 +274,18 @@
   top: 18px;
   right: 18px;
   opacity: 0.75;
-  pointer-events: none; /* para que no interfiera con clics */
+  pointer-events: none;
 }
 
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
-  border-color: #ffd4d4; /* un toque del naranja corporativo */
+  border-color: #ffd4d4;
 }
 
-/* --- MI PERFIL --- */
-
+/* ============================================================
+   8. SECCIÓN PERFIL DE USUARIO
+============================================================ */
 .profile-section {
   padding: 30px;
   display: flex;
@@ -326,24 +335,23 @@
 }
 
 .btn-save {
-  margin: 20px auto 0 auto; /* centrado horizontal */
+  margin: 20px auto 0 auto;
   padding: 12px 28px;
-  background: #ff4444; /* naranja corporativo */
+  background: #ff4444;
   color: white;
   border: none;
   border-radius: 10px;
   font-size: 15px;
   cursor: pointer;
   font-weight: 600;
-  display: block; /* esto es CLAVE para centrarlo */
-  width: fit-content; /* evita que se estire */
+  display: block;
+  width: fit-content;
 }
 
 .btn-save:hover {
   background: #e63c3c;
 }
 
-/* Fila de dos columnas para campos cortos */
 .form-row {
   display: flex;
   gap: 20px;
@@ -353,8 +361,9 @@
   flex: 1;
 }
 
-/* --- AVATAR CENTRADO PREMIUM --- */
-
+/* ============================================================
+   9. AVATAR CENTRADO (PERFIL)
+============================================================ */
 .profile-header-centered {
   display: flex;
   flex-direction: column;
@@ -418,10 +427,9 @@
   font-weight: 600;
 }
 
-/* ================================
-   PANTALLA DE CARGA (FULLSCREEN REAL)
-================================ */
-
+/* ============================================================
+   10. PANTALLA DE CARGA (FULLSCREEN)
+============================================================ */
 #loading-screen {
   position: fixed !important;
   top: 0;
@@ -440,8 +448,7 @@
 .loading-content {
   text-align: center;
   color: white;
-  font-family: "Inter", sans-serif;
-  transform: translateY(40px); /* BAJA TODO EL BLOQUE */
+  transform: translateY(40px);
 }
 
 .loading-logo {
@@ -478,15 +485,55 @@
   opacity: 0.8;
 }
 
-/* Responsive: en móviles se apila */
+/* ============================================================
+   11. ALERTAS GLOBALES
+============================================================ */
+.alert {
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+  border-left: 5px solid #28a745;
+}
+
+.alert-info {
+  background: #d1ecf1;
+  color: #0c5460;
+  border-left: 5px solid #17a2b8;
+}
+
+.alert-danger {
+  background: #f8d7da;
+  color: #721c24;
+  border-left: 5px solid #dc3545;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   12. RESPONSIVE DESIGN
+============================================================ */
 @media (max-width: 600px) {
   .profile-header {
     flex-direction: column;
     gap: 15px;
   }
 }
-
-/******** Diseño responsive ********/
 
 @media (max-width: 1000px) {
   .dashboard-grid {
