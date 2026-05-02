@@ -46,14 +46,19 @@ if (isset($_GET["error"])) {
             <?php endif; ?>
 
 
-            <form action="../../backend/controllers/login-controller.php" method="POST" class="login-form">
+            <form action="../../backend/controllers/login-controller.php" method="POST" class="login-form"  autocomplete="off">
+
+                <!--Input fantasma para engañar al navegador y que no coja por defecto un usuario y contraseña 
+                <input type="text" name="fakeusernameremembered" style="display:none">
+                <input type="password" name="fakepasswordremembered" style="display:none"> 
+                -->
 
                 <label>Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email"  autocomplete="off" required>
                 <div id="email-error" class="error-msg"></div>
 
                 <label>Contraseña</label>
-                <input type="password" id="password" name="contrasena" required>
+                <input type="password" id="password" name="contrasena" autocomplete="off" required>
 
                 <!-- Botón mostrar/ocultar contraseña -->
                 <button type="button" id="toggle-pass" class="toggle-pass">Mostrar</button>
