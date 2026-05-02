@@ -56,7 +56,7 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
                 <span>Inicio</span>
             </a>
 
-            <a href="#">
+            <a href="usuarios.php">
                 <img src="../../assets/img/dashboard/icon-users.png">
                 <span>Gestión usuarios</span>
             </a>
@@ -69,6 +69,11 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
             <a href="#">
                 <img src="../../assets/img/dashboard/icon-stats.png">
                 <span>Estadísticas</span>
+            </a>
+
+            <a href="perfil.php" class="active">
+                <img src="../../assets/img/dashboard/icon-settings.png">
+                <span>Mi perfil</span>
             </a>
 
             <a href="../../../backend/controllers/logout.php">
