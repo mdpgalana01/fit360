@@ -6,9 +6,6 @@ $id = $_SESSION["id_usuario"];
 
 $sql = "SELECT nombre, avatar FROM usuario WHERE id_usuario = ?";
 $stmt = $conexion->prepare($sql);
-if (!$stmt) {
-    die("Error en prepare(): " . $conexion->error);
-}
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -45,13 +42,14 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
 
 <div class="dashboard-container">
 
+    <!-- SIDEBAR ENTRENADOR -->
     <aside class="sidebar">
         <div class="logo">
             <img src="../../assets/img/logo/logo-fit360.png" alt="Fit360">
         </div>
 
         <nav>
-            <a href="#" class="active">
+            <a href="dashboard.php" class="active">
                 <img src="../../assets/img/dashboard/icon-dashboard.png">
                 <span>Inicio</span>
             </a>
@@ -71,6 +69,11 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
                 <span>Progreso alumnos</span>
             </a>
 
+            <a href="perfil.php">
+                <img src="../../assets/img/dashboard/icon-settings.png">
+                <span>Mi perfil</span>
+            </a>
+
             <a href="../../../backend/controllers/logout.php">
                 <img src="../../assets/img/dashboard/icon-logout.png">
                 <span>Cerrar sesión</span>
@@ -78,8 +81,10 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
         </nav>
     </aside>
 
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="main-content">
 
+        <!-- HEADER -->
         <header class="dashboard-header">
             <div class="header-search">
                 <input type="text" placeholder="Buscar alumno, clase...">
@@ -92,7 +97,7 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
                 </div>
 
                 <div class="header-user">
-                    <a href="../perfil.php" class="user-name-link">
+                    <a href="perfil.php" class="user-name-link">
                         <?php echo htmlspecialchars($nombre); ?>
                     </a>
                     <div class="user-avatar">
@@ -102,6 +107,7 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
             </div>
         </header>
 
+        <!-- BANNER -->
         <section class="dashboard-banner">
             <div class="banner-text">
                 <h1>Hola, <?php echo htmlspecialchars($nombre); ?></h1>
@@ -110,6 +116,7 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
             </div>
         </section>
 
+        <!-- TARJETAS -->
         <section class="dashboard-grid">
 
             <div class="card">
@@ -162,3 +169,4 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
 <script src="../../js/dashboard.js"></script>
 </body>
 </html>
+

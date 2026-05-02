@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+//var_dump($_SESSION["rol"]);
+//exit;
+
 if (!isset($_SESSION["id_usuario"])) {
     header("Location: ../../frontend/views/login.php");
     exit();
