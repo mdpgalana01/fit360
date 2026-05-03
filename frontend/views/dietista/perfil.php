@@ -1,13 +1,21 @@
 <?php
-require_once "../../../backend/middleware/dietista.php";
-require_once "../../../backend/config/conexion.php";
+session_start();
+
+if (!isset($_SESSION["id_usuario"])) {
+    header("Location: ../login.php");
+    exit();
+}
+
+require_once __DIR__ . "/../../../backend/config/conexion.php";
 
 $idUsuario = $_SESSION["id_usuario"];
 
 // Obtener datos del usuario
 $sql = "SELECT u.nombre, u.apellidos, u.email, u.rol, u.fecha_registro, 
-               u.avatar
+               u.avatar,
+               g.nombre AS gimnasio
         FROM usuario u
+        LEFT JOIN gimnasio g ON u.id_gimnasio = g.id_gimnasio
         WHERE u.id_usuario = ?";
 
 $stmt = $conexion->prepare($sql);
@@ -15,12 +23,6 @@ $stmt->bind_param("i", $idUsuario);
 $stmt->execute();
 $resultado = $stmt->get_result();
 $usuario = $resultado->fetch_assoc();
-
-// Avatar
-$avatar = $usuario['avatar'] ?? "";
-if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avatar)) {
-    $avatar = "profile-avatar.png";
-}
 ?>
 
 <!DOCTYPE html>
@@ -47,19 +49,19 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
                 <span>Inicio</span>
             </a>
 
-            <a href="#">
+            <a href="../nutricion.php">
                 <img src="../../assets/img/dashboard/icon-nutrition.png">
                 <span>Planes nutricionales</span>
             </a>
 
-            <a href="#">
-                <img src="../../assets/img/dashboard/icon-progress.png">
-                <span>Seguimiento pacientes</span>
+            <a href="../salud.php">
+                <img src="../../assets/img/dashboard/icon-health.png">
+                <span>Salud y hábitos</span>
             </a>
 
-            <a href="#">
-                <img src="../../assets/img/dashboard/icon-calendar.png">
-                <span>Citas y agenda</span>
+            <a href="../progreso.php">
+                <img src="../../assets/img/dashboard/icon-progress.png">
+                <span>Seguimiento</span>
             </a>
 
             <a href="perfil.php" class="active">
@@ -82,7 +84,16 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
             <div class="profile-card">
                 <div class="profile-header-centered">
 
-                    <h2 class="profile-title-centered">Información personal (Dietista)</h2>
+                    <h2 class="profile-title-centered">Información personal</h2>
+
+                    <?php
+                        $avatar = $usuario['avatar'] ?? "";
+
+                        // Avatar por defecto actualizado
+                        if ($avatar === "" || !file_exists(__DIR__ . "/../../../frontend/assets/img/users/" . $avatar)) {
+                            $avatar = "default-avatar.png";
+                        }
+                    ?>
 
                     <div class="avatar-container-centered">
                         <img src="../../assets/img/users/<?php echo htmlspecialchars($avatar); ?>"
@@ -121,6 +132,11 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
                         <input type="email" value="<?php echo htmlspecialchars($usuario['email']); ?>" disabled>
                     </div>
 
+                    <div class="form-group">
+                        <label>Gimnasio</label>
+                        <input type="text" value="<?php echo htmlspecialchars($usuario['gimnasio']); ?>" disabled>
+                    </div>
+
                     <div class="form-row">
                         <div class="form-group half">
                             <label>Rol</label>
@@ -147,3 +163,4 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
 
 </body>
 </html>
+
