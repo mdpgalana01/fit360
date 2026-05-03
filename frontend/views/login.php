@@ -48,10 +48,10 @@ if (isset($_GET["error"])) {
 
             <form action="../../backend/controllers/login-controller.php" method="POST" class="login-form"  autocomplete="off">
 
-                <!--Input fantasma para engañar al navegador y que no coja por defecto un usuario y contraseña 
+                <!--Input fantasma para engañar al navegador y que no coja por defecto un usuario y contraseña  -->
                 <input type="text" name="fakeusernameremembered" style="display:none">
                 <input type="password" name="fakepasswordremembered" style="display:none"> 
-                -->
+                
 
                 <label>Email</label>
                 <input type="email" id="email" name="email"  autocomplete="off" required>

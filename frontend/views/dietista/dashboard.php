@@ -71,6 +71,12 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
                 <span>Seguimiento</span>
             </a>
 
+            <a href="perfil.php">
+                <img src="../../assets/img/dashboard/icon-settings.png">
+                <span>Mi perfil</span>
+            </a>
+
+
             <a href="../../../backend/controllers/logout.php">
                 <img src="../../assets/img/dashboard/icon-logout.png">
                 <span>Cerrar sesión</span>
@@ -92,7 +98,7 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
                 </div>
 
                 <div class="header-user">
-                    <a href="../perfil.php" class="user-name-link">
+                    <a href="perfil.php" class="user-name-link">
                         <?php echo htmlspecialchars($nombre); ?>
                     </a>
                     <div class="user-avatar">
