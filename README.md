@@ -65,7 +65,8 @@ El sistema implementa **roles diferenciados** (admin, entrenador, dietista, soci
 
 ## 📂 Estructura del proyecto
 
-```C:.
+```
+C:.
 │   index.php
 │   README.md
 │
@@ -188,7 +189,7 @@ El sistema implementa **roles diferenciados** (admin, entrenador, dietista, soci
     │           perfil.php
     │
     └───_test
-            test-login.html```
+            test-login.html
 
   
 ---
