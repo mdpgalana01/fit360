@@ -39,6 +39,10 @@ if (isset($_GET["msg"])) {
 
             <form action="../../backend/controllers/recuperar-controller.php" method="POST" class="login-form">
 
+                <!--Input fantasma para engañar al navegador y que no coja por defecto un usuario y contraseña  -->
+                <input type="text" name="fakeusernameremembered" style="display:none">
+                
+
                 <label>Email</label>
                 <input type="email" name="email" required>
 

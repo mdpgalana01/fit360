@@ -44,7 +44,7 @@ $usuario = $resultado->fetch_assoc();
         </div>
 
         <nav>
-            <a href="dashboard.php">
+            <a href="dashboard.php" class="active">
                 <img src="../../assets/img/dashboard/icon-dashboard.png">
                 <span>Inicio</span>
             </a>
@@ -55,16 +55,16 @@ $usuario = $resultado->fetch_assoc();
             </a>
 
             <a href="#">
-                <img src="../../assets/img/dashboard/icon-health.png">
-                <span>Salud y hábitos</span>
+                <img src="../../assets/img/dashboard/icon-progress.png">
+                <span>Seguimiento pacientes</span>
             </a>
 
             <a href="#">
-                <img src="../../assets/img/dashboard/icon-progress.png">
-                <span>Seguimiento</span>
+                <img src="../../assets/img/dashboard/icon-calendar.png">
+                <span>Citas y agenda</span>
             </a>
 
-            <a href="perfil.php" class="active">
+            <a href="perfil.php">
                 <img src="../../assets/img/dashboard/icon-settings.png">
                 <span>Mi perfil</span>
             </a>
