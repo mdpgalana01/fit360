@@ -36,7 +36,7 @@ $hash = password_hash($contrasena, PASSWORD_DEFAULT);
 
 // 5. Insertar usuario
 $sql = "INSERT INTO usuario (nombre, apellidos, email, contrasena, fecha_registro, rol, id_gimnasio, avatar)
-        VALUES (?, ?, ?, ?, CURDATE(), 'usuario', 1, 'default-avatar.png')";
+        VALUES (?, ?, ?, ?, CURDATE(), 'socio', 1, 'default-avatar.png')";
 $stmt = $conexion->prepare($sql);
 $stmt->bind_param("ssss", $nombre, $apellidos, $email, $hash);
 

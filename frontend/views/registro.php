@@ -48,6 +48,10 @@ if (isset($_GET["msg"])) {
                 <label>Apellidos</label>
                 <input type="text" name="apellidos" required>
 
+                <!--Input fantasma para engañar al navegador y que no coja por defecto un usuario y contraseña  -->
+                <input type="text" name="fakeusernameremembered" style="display:none">
+                <input type="password" name="fakepasswordremembered" style="display:none"> 
+
                 <label>Email</label>
                 <input type="email" name="email" required>
 

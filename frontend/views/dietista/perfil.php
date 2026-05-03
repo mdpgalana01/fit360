@@ -49,17 +49,17 @@ $usuario = $resultado->fetch_assoc();
                 <span>Inicio</span>
             </a>
 
-            <a href="../nutricion.php">
+            <a href="#">
                 <img src="../../assets/img/dashboard/icon-nutrition.png">
                 <span>Planes nutricionales</span>
             </a>
 
-            <a href="../salud.php">
+            <a href="#">
                 <img src="../../assets/img/dashboard/icon-health.png">
                 <span>Salud y hábitos</span>
             </a>
 
-            <a href="../progreso.php">
+            <a href="#">
                 <img src="../../assets/img/dashboard/icon-progress.png">
                 <span>Seguimiento</span>
             </a>

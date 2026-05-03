@@ -76,12 +76,6 @@ if ($avatar === "" || !file_exists(__DIR__ . "/../../assets/img/users/" . $avata
                 <span>Mi perfil</span>
             </a>
 
-            <a href="perfil.php">
-                <img src="../../assets/img/dashboard/icon-settings.png">
-                <span>Mi perfil</span>
-            </a>
-
-
             <a href="../../../backend/controllers/logout.php">
                 <img src="../../assets/img/dashboard/icon-logout.png">
                 <span>Cerrar sesión</span>
