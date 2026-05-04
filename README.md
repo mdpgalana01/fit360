@@ -6,37 +6,37 @@ El sistema implementa **roles diferenciados** (admin, entrenador, dietista, soci
 
 ---
 
-## 🚀 Funcionalidades principales
+## Funcionalidades principales
 
-### 🔐 Autenticación y Roles
+###  Autenticación y Roles
 - Login seguro con contraseñas encriptadas.
 - Roles: **admin**, **entrenador**, **dietista**, **socio**.
 - Middleware de acceso por rol.
 - Redirección automática al dashboard correspondiente.
 
-### 👤 Perfil de Usuario
+###  Perfil de Usuario
 - Edición de datos personales.
 - Subida de avatar con validación.
 - Visualización de gimnasio asociado.
 - Rol asignado automáticamente como *socio* en el registro.
 
-### 🏋️ Rutinas y Entrenamientos
+###  Rutinas y Entrenamientos
 - Rutinas personalizadas por usuario.
 - Rutinas creadas por entrenador.
 - Registro de entrenamientos.
 - Relación N:M entre rutinas y ejercicios.
 
-### 🍎 Nutrición y Salud
+###  Nutrición y Salud
 - Registro diario de ingesta nutricional.
 - Pautas nutricionales creadas por dietista.
 - Seguimiento físico con peso, grasa, medidas corporales.
 
-### 📅 Clases y Reservas
+###  Clases y Reservas
 - Clases colectivas con aforo.
 - Reservas y cancelaciones.
 - Relación con entrenador y gimnasio.
 
-### 📊 Administración
+###  Administración
 - Gestión de usuarios.
 - Gestión de gimnasios.
 - Configuración de roles.
@@ -44,7 +44,7 @@ El sistema implementa **roles diferenciados** (admin, entrenador, dietista, soci
 
 ---
 
-## 🧱 Tecnologías utilizadas
+##  Tecnologías utilizadas
 
 ### Frontend
 - HTML5, CSS3, JavaScript
@@ -63,7 +63,7 @@ El sistema implementa **roles diferenciados** (admin, entrenador, dietista, soci
 
 ---
 
-## 📂 Estructura del proyecto
+##  Estructura del proyecto
 
 ```
 C:.
@@ -194,7 +194,7 @@ C:.
   
 ---
 
-## 🗄 Base de datos
+##  Base de datos
 
 Incluye tablas para:
 
@@ -217,7 +217,7 @@ El script completo está en:
 
 ---
 
-## 🎨 Prototipado (Figma)
+##  Prototipado (Figma)
 
 ### Wireframes (baja fidelidad)
 https://www.figma.com/proto/B5r8xgQMMH3xY3SEdn99ds/B_Wireframe_Fit360
@@ -227,7 +227,7 @@ https://www.figma.com/proto/0gJyK0e2dz5K4jg8Wqsxyl/B_Wireframe_Fit360--Alta-fide
 
 ---
 
-## 🧪 Usuarios de prueba
+##  Usuarios de prueba
 
 > **Contraseña real de todos los usuarios: 123456**
 
@@ -240,7 +240,7 @@ https://www.figma.com/proto/0gJyK0e2dz5K4jg8Wqsxyl/B_Wireframe_Fit360--Alta-fide
 
 ---
 
-## 👩‍💻 Autora
+##  Autora
 
 **M. Pilar Galán Alís**  
 Proyecto Intermodular DAW – 2026
