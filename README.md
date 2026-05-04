@@ -134,13 +134,10 @@ C:.
     │       │
     │       ├───logo
     │       │       logo-fit360.png
-    │       │       _logo-fit360.png
-    │       │       __logo-fit360.png
     │       │
     │       └───users
     │               avatar_1_1777751882.jpg
     │               avatar_3_1777751849.jpg
-    │               avatar_9_1777799706.jpg
     │               default-avatar.png
     │
     ├───css
@@ -156,40 +153,37 @@ C:.
     │       dashboard.js
     │       login.js
     │
-    ├───views
-    │   │   clases.php
-    │   │   dashboard.php
-    │   │   estadisticas.php
-    │   │   login.php
-    │   │   no-autorizado.php
-    │   │   nutricion.php
-    │   │   perfil.php
-    │   │   progreso.php
-    │   │   recuperar.php
-    │   │   registro.php
-    │   │   rutinas.php
-    │   │   salud.php
-    │   │
-    │   ├───admin
-    │   │       dashboard.php
-    │   │       gimnasio-crear.php
-    │   │       gimnasio-editar.php
-    │   │       gimnasios.php
-    │   │       perfil.php
-    │   │       usuario-crear.php
-    │   │       usuario-editar.php
-    │   │       usuarios.php
-    │   │
-    │   ├───dietista
-    │   │       dashboard.php
-    │   │       perfil.php
-    │   │
-    │   └───entrenador
-    │           dashboard.php
-    │           perfil.php
-    │
-    └───_test
-            test-login.html
+    └───views
+        │   clases.php
+        │   dashboard.php
+        │   estadisticas.php
+        │   login.php
+        │   no-autorizado.php
+        │   nutricion.php
+        │   perfil.php
+        │   progreso.php
+        │   recuperar.php
+        │   registro.php
+        │   rutinas.php
+        │   salud.php
+        │
+        ├───admin
+        │       dashboard.php
+        │       gimnasio-crear.php
+        │       gimnasio-editar.php
+        │       gimnasios.php
+        │       perfil.php
+        │       usuario-crear.php
+        │       usuario-editar.php
+        │       usuarios.php
+        │
+        ├───dietista
+        │       dashboard.php
+        │       perfil.php
+        │
+        └───entrenador
+                dashboard.php
+                perfil.php
 
 ```
   
