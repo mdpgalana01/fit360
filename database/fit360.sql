@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-05-2026 a las 19:43:05
+-- Tiempo de generación: 05-05-2026 a las 01:42:19
 -- Versión del servidor: 11.8.1-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -270,11 +270,10 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellidos`, `email`, `avatar`, `contrasena`, `fecha_registro`, `rol`, `id_gimnasio`) VALUES
 (1, 'Julia', 'Oltra', 'julia@test.com', 'avatar_1_1777751882.jpg', '$2y$10$8j53eh0PVHFKZ8BpBRec1ujxPvzNWZleFOGORTQkCbC4sbW52EssK', '2026-03-02', 'socio', 1),
 (3, 'Clara', 'Oltra', 'clara@test.com', 'avatar_3_1777751849.jpg', '$2y$10$8j53eh0PVHFKZ8BpBRec1ujxPvzNWZleFOGORTQkCbC4sbW52EssK', '2026-03-17', 'admin', 1),
-(9, 'Julia2', 'Oltra Oltra', 'julia2@test.com', 'avatar_9_1777799706.jpg', '$2y$10$KfyNfkWlAN60dIT3NTszzunIFDBGfatQBeFuAlPAxKjjt2/zUss1e', '2026-04-29', 'entrenador', 1),
-(10, 'Julia3', 'Oltra3', 'julia3@test.com', 'default-avatar.png', '$2y$10$s6THysVfawn1MxfGXBv1nuY1huuU.0EMqqYXn9RPLyiXlmk73UKAy', '2026-04-30', 'dietista', 1),
-(11, 'prueba', 'prueba', 'prueba@prueba.com', 'default-avatar.png', '$2y$10$xJ9cGvQHHjfcPb76br7PqOhfVm75xa6Nhbd/CDPQKVx8LeRzAytKG', '2026-05-02', '', 1),
-(12, 'prueba2', 'prueba2', 'prueba2@prueba2.com', 'default-avatar.png', '$2y$10$gvUI4jJCZxWtD7kUojJyhuNzdtp5xTi3Yze0UKr3CdV8x6u0Z4M42', '2026-05-02', '', 1),
-(14, 'caca', 'caca', 'caca@caca.es', 'default-avatar.png', '$2y$10$LCyZR4VHVSerjYeCX0d6iuhYERbJGqwMiMkGKWo1wG.Tkq3M1sy4W', '2026-05-03', 'socio', 1);
+(9, 'Julia2', 'Oltra Oltra', 'julia2@test.com', 'avatar_9_1777937697.jpg', '$2y$10$KfyNfkWlAN60dIT3NTszzunIFDBGfatQBeFuAlPAxKjjt2/zUss1e', '2026-04-29', 'entrenador', 1),
+(10, 'Julia3', 'Oltra3', 'julia3@test.com', 'avatar_10_1777938054.jpg', '$2y$10$s6THysVfawn1MxfGXBv1nuY1huuU.0EMqqYXn9RPLyiXlmk73UKAy', '2026-04-30', 'dietista', 1),
+(11, 'prueba', 'prueba', 'prueba@prueba.com', 'default-avatar.png', '$2y$10$xJ9cGvQHHjfcPb76br7PqOhfVm75xa6Nhbd/CDPQKVx8LeRzAytKG', '2026-05-02', 'socio', 1),
+(12, 'prueba2', 'prueba2', 'prueba2@prueba2.com', 'default-avatar.png', '$2y$10$gvUI4jJCZxWtD7kUojJyhuNzdtp5xTi3Yze0UKr3CdV8x6u0Z4M42', '2026-05-02', 'socio', 1);
 
 --
 -- Índices para tablas volcadas
@@ -449,7 +448,7 @@ ALTER TABLE `seguimiento_fisico`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Restricciones para tablas volcadas
