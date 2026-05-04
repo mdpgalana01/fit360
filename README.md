@@ -68,6 +68,7 @@ El sistema implementa **roles diferenciados** (admin, entrenador, dietista, soci
 ```
 C:.
 │   index.php
+│   MEMORIA_Y_JUSTIFICACION_FIT360.pdf
 │   README.md
 │
 ├───backend
@@ -234,6 +235,7 @@ https://www.figma.com/proto/0gJyK0e2dz5K4jg8Wqsxyl/B_Wireframe_Fit360--Alta-fide
 | julia3@test.com  | dietista   | 123456     |
 
 ---
+##  Nota sobre el estado del proyecto
 
 Fit360 es un proyecto modular de gran alcance.
 En esta entrega se presenta la primera fase funcional, centrada en los módulos principales y en el rol de socio, que es el más completo actualmente.
