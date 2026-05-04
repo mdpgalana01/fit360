@@ -235,6 +235,12 @@ https://www.figma.com/proto/0gJyK0e2dz5K4jg8Wqsxyl/B_Wireframe_Fit360--Alta-fide
 
 ---
 
+Fit360 es un proyecto modular de gran alcance.
+En esta entrega se presenta la primera fase funcional, centrada en los módulos principales y en el rol de socio, que es el más completo actualmente.
+En el repositorio se incluye un archivo adicional con una memoria y una justificación detallada del desarrollo, las decisiones técnicas y las partes pendientes para fases futuras.
+
+---
+
 ##  Autora
 
 **M. Pilar Galán Alís**  
