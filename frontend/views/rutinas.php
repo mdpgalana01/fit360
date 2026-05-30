@@ -81,7 +81,7 @@ if (isset($_GET['editar'])) {
             <?php endif; ?>
 
             <?php if (isset($_GET['error']) && $_GET['error'] === 'campos'): ?>
-                <div class="msg error">El peso es obligatorio.</div>
+                <div class="msg error">Debes rellenar todos los campos obligatorios.</div>
             <?php endif; ?>
 
             <?php if (isset($_GET['error']) && $_GET['error'] === 'numerico'): ?>
