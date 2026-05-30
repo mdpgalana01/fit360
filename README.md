@@ -6,6 +6,49 @@ El sistema implementa **roles diferenciados** (admin, entrenador, dietista, soci
 
 ---
 
+## Instrucciones de acceso al proyecto para su ejecución y pruebas
+
+### Repositorio en GitHub
+https://github.com/mdpgalana01/fit360
+
+### URL del proyecto desplegado
+https://fit360.great-site.net
+
+---
+
+## Credenciales de acceso para pruebas
+
+> **Contraseña real de todos los usuarios: 123456**
+
+### Administrador
+- **Usuario:** admin@admin.com  
+- **Contraseña:** 123456  
+
+### Socio
+- **Usuario:** socio@socio.com  
+- **Contraseña:** 123456  
+
+### Entrenador
+- **Usuario:** entrenador@entrenador.com  
+- **Contraseña:** 123456  
+
+### Dietista
+- **Usuario:** dietista@dietista.com  
+- **Contraseña:** 123456  
+
+### Usuario adicional (usuario1)
+- **Usuario:** usuario1@usuario1.com  
+- **Contraseña:** 123456  
+
+### Invitado (adaptación a la tarea)
+- **Usuario:** invitado@invitado.com  
+- **Rol real en el sistema:** socio  
+- **Contraseña:** 123456  
+
+> *Nota: El rol “invitado” no existe en Fit360. Este usuario se incluye únicamente para cumplir los requisitos del enunciado de la tarea. En el sistema real, cualquier usuario registrado recibe automáticamente el rol “socio”.*
+
+---
+
 ## Funcionalidades principales
 
 ###  Autenticación y Roles
@@ -227,12 +270,14 @@ https://www.figma.com/proto/0gJyK0e2dz5K4jg8Wqsxyl/B_Wireframe_Fit360--Alta-fide
 
 > **Contraseña real de todos los usuarios: 123456**
 
-| Email             | Rol        | Contraseña |
-|------------------|------------|------------|
-| clara@test.com   | admin      | 123456     |
-| julia@test.com   | socio      | 123456     |
-| julia2@test.com  | entrenador | 123456     |
-| julia3@test.com  | dietista   | 123456     |
+| Email                     | Rol        | Contraseña |
+|---------------------------|------------|------------|
+| admin@admin.com           | admin      | 123456     |
+| socio@socio.com           | socio      | 123456     |
+| entrenador@entrenador.com | entrenador | 123456     |
+| dietista@dietista.com     | dietista   | 123456     |
+
+También usuario1@usuario1.com y invitado@invitado.com tienen perfiles de socio, con la misma contraseña (como pedía la tarea)
 
 ---
 ##  Nota sobre el estado del proyecto
